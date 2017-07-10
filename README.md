@@ -2,6 +2,8 @@
 govtools
 ========
 
+[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
+
 The idea of this R package is to provide the user with the ability to add common files to their repository such as the `README`, `CODE OF CONDUCT`, `CONTRIBUTING` and `LICENSE` files.
 
 Installation
