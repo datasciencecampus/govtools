@@ -22,3 +22,8 @@ In a similar vein to the [`devtools`](https://github.com/hadley/devtools) packag
 ``` r
 govtools::use_ogl_license()
 ```
+
+Code of Conduct
+===============
+
+Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
