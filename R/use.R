@@ -1,3 +1,45 @@
+# Code of Conduct --------------------------------------------------------------
+
+#' Add a code of conduct file
+#'
+#' Add the Contributor Covenant version 1.4 code of conduct
+#'
+#' @param pkg package description, can be path or package name. See
+#'   \code{\link{as.package}} for more information.
+#' @param email String. An email address to act as a point of contact for the
+#'   project.
+#'
+#' @export
+use_code_of_conduct <- function(pkg = ".", email = NULL) {
+  if (is.null(email)) {
+    stop("Please provide an email address")
+  }
+
+  pkg <- devtools::as.package(pkg)
+
+  coc_template <- system.file(
+    "templates", "CODE_OF_CONDUCT.Rmd",
+    package = "govtools",
+    mustWork = TRUE
+  )
+
+  rmarkdown::render(
+    coc_template,
+    output_dir = pkg$path,
+    params = list(email = email)
+  )
+
+  message("* Don't forget to describe the code of conduct in your README.md:")
+  message(
+    "Please note that this project is released with a ",
+    "[Contributor Code of Conduct](CODE_OF_CONDUCT.md). ",
+    "By participating in this ",
+    "project you agree to abide by its terms."
+  )
+}
+
+# License files ----------------------------------------------------------------
+
 #' @importFrom devtools use_mit_license
 #' @export
 devtools::use_mit_license
@@ -28,7 +70,7 @@ use_ogl_license <- function(pkg = ".") {
   )
 }
 
-# Utilities ---------------------------------------------------------------
+# Utilities --------------------------------------------------------------------
 
 use_template <- function(template, save_as = template, data = list(),
                          ignore = FALSE, open = FALSE, pkg = ".") {
